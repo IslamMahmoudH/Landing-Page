@@ -7,17 +7,9 @@ i just changed some stuffs Modifing the related info to the project... so all th
 <!-- I do upload a version of this project folder on Github:
 
 the link for it:
-        https://github.com/ZEXAWY/Landing-Page-Project-Udacity/tree/main/ProjectLandingPage_1
+     https://github.com/IslamMahmoudH/Landing-Page.git
 
 -->
-
-<!--I also want to mention that i started this project from a while ago: but i finally decided upload it for you to review and feed me back with the required action: 
-and i got inspired by a code writting by our communtiy team tutors they helped us a lot in this project:
-
-link for the code i inspired by is:
-        https://nfpdiscussions.udacity.com/t/web-webinar-recordings-november-cohort/473510
-        
-I hope you review this project and tell me what i am missing in here. -->
 
 # Project Title
 
@@ -27,19 +19,13 @@ Landing Page Project by udacity.com
 
 <!-- Add a demo for your project -->
 
-<!-- After you have written about your project, it is a good idea to have a demo/preview(**video/gif/screenshots** are good options) of your project so that people can know what to expect in your project. You could also add the demo in the previous section with the product description.
 
-Here is a random GIF as a placeholder. -->
 
 ![Random GIF](https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif) 
 
 This project is all about converting the landing page from the static version to the dynamic version using JavaScript only.
 
 # Table of contents
-
-<!-- After you have introduced your project, it is a good idea to add a **Table of contents** or **TOC** as **cool** people say it. This would make it easier for people to navigate through your README and find exactly what they are looking for.
-
-Here is a sample TOC(*wow! such cool!*) that is actually the TOC for this README. -->
 
 - [Project Title](#project-title)
 - [Demo-Preview](#demo-preview)
@@ -55,29 +41,12 @@ Here is a sample TOC(*wow! such cool!*) that is actually the TOC for this README
 # Installation
 [(Back to top)](#table-of-contents)
 
-<!-- *You might have noticed the **Back to top** button(if not, please notice, it's right there!). This is a good idea because it makes your README **easy to navigate.*** 
-
-The first one should be how to install(how to generally use your project or set-up for editing in their machine).
-
-This should give the users a concrete idea with instructions on how they can use your project repo with all the steps.
-
-Following this steps, **they should be able to run this in their device.**
-
-A method I use is after completing the README, I go through the instructions from scratch and check if it is working. -->
-
-<!-- Here is a sample instruction:
-
-To use this project, first clone the repo on your device using the command below:
-
-```git init```
-
-```git clone https://github.com/navendu-pottekkat/nsfw-filter.git``` -->
 
 To download this project feel free to clone the repo on your device using the following command:
 
 ```git init```
 
-```git clone https://github.com/ZEXAWY/Landing-Page-Project-Udacity.git```
+```git clone https://github.com/IslamMahmoudH/Landing-Page.git ```
 
 # Usage
 [(Back to top)](#table-of-contents)
@@ -107,30 +76,26 @@ Ideally, you should keep the README simple. If you need to add more complex expl
         When clicking an item from the navigation menu, the link should scroll to the appropriate section.
 
 ### Project solving:
-- the first thing i start building the navigation bar by defining the variables which will hold the sub element inside the main navbar menu, then building my builder function to build the navigation bar dynamically, in this case, i chosed three main gloabal variables to hold everything i will need will going on and these are:
-    - ```sections``` to hold the all sections inside the page.
-    - ```navbar``` to hold the subelements inside the navigation menu.
-    - ```fragment``` for effeciency purpose
+- At first i start building the navigation bar by defining the variables which will hold the sub element inside the main navbar menu, then building my builder function to build the navigation bar dynamically, in this case, i chosed two main gloabal variables to hold everything i will need will going on and these are:
+    - ```main-sections``` to hold the all sections inside the page.
+    - ```nav-bar``` to hold the subelements inside the navigation menu.
 - The ```navMenuBuilder``` function, iterating over all the sections in the page to get every section id and section data we use to build our new created elements and link them to each others, and creating a new ```<li>``` elements to hold the anchor's ```<a>``` elements inside the navigation bar menu we will use later to navigate to the right section using the ```id``` attribute inside the ```li``` element using the ```#``` to refer the section we want to go to.
 - Adding the class to each ```anchor``` element, and then adding the title to this element to appear with the name according to the section using the ``` data``` attribute we get previously.
 - Adding ```eventListener``` to the ```anchor``` element to navigate smoothly. and pervent the default behavior which will jump instantly to the section.
-- The final thing is to append all the element to each other, the ```anchor``` to the ```li```, the ```li``` to the ```fragment```, and the ```fragment``` to the main ```navBar``` element.
+- The final thing is to link all the element to each other, the ```anchor``` to the ```li``` in the the main ```navBar``` element.
 
 one more thing is to add ```eventListener``` to the ```window``` to tell the browser when loading he should run the main navMenuBuilder function instantly. instead of just write it down to run after some lines of codes. that's to always run the main navMenuBuilder funtion even if there were error in loading the page in previous lines.
 
-- For the section view state i use ```IntersectionObserver``` class instead of ```getBoundingClientRect``` because i find it easier to deal with without need to assign the ```top``` pixel of the section when it appears, and when a section ```isIntersecting```we add the ```your-active-class``` if it's not not exist, and remove the class when the section ```is not intersecting```. And for that i divided the code into three main pieces:
-    - the Object option: where i only need the threshold property.
-    - and the callBack function to add and remove the ```your-active-class``` to the intersecting section... extra thing here is i added an ```active``` class to the element in the ```navBar``` to be highlighted according to section instersecting at the moment. 
-    - The ```observer``` variable which hold the ```IntersectingObserver``` class and use it when we add another ```eventListener``` to the window while scrolling to use the ```observe``` method on the sections to get the section inView right now.
+- For the section view state i use  ```getBoundingClientRect``` because i needed to get the dimensions of each block of the sections in the page.
+- Using the previous function, the backgound style (using ```your-active-class``` in the css file) and the ```eventListener``` to controll the appearence of each section when viewed in the page. 
 
-            this ```active``` class i defined in the CSS file under ```.navbar__menu .menu__link.active```.
-- Final thing i add an eventListener to the window while scrolling to observe the sections, and then applying the ```intersectionObserver``` to the current section in view.
+       
 
 
 # The Author
 [(Back to top)](#table-of-contents)
 
-I am a new developer student who like programing so much... My name is ```Ahmed Mohamed Zakaria```, at the moment of typing this file i am only a student of Web Development Professional Track powered by Udacity.com
+I am a new developer student who like programing so much... My name is ```Islam Mahmoud Hanafy```, at the moment of typing this file i am only a student of Web Development Professional Track powered by Udacity.com
 
 
 # Footer

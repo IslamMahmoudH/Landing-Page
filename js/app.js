@@ -77,10 +77,38 @@ function  add_new_button(){
         
         // Scroll to section on link click
         new_button.innerHTML=`<a href='#${section.id}' class='menu__link' data-nav='${section.dataset.nav}'>${section.dataset.nav}`;
+        
+        
         //next command is adding new_button to the nav_bar(adding an element to the navigation bar)
         nav_bar.appendChild(new_button)
     }
+};
+
+// define a new scrolling function to scroll smoothly
+function scroller(){
+    // creating a var to contain all the <a> elements in the navigation menu bar
+    const anchors = document.querySelectorAll('a.menu__link') 
+    // iterating over sections on the web page to find out right seciton to navigate to.
+    for(const section of main_sections){
+        // forEach anchor i add an event listener.
+        anchors.forEach(anchor => {
+            // condition is true if the data of the anchor is exactly the same of the required section
+            // to navigate to the right section, not any random section
+            if(anchor.dataset.nav === section.dataset.nav){
+                anchor.addEventListener('click', (e)=>{
+                    // Perventing the Default behavior which is jumping direct to the section.
+                    e.preventDefault();
+                    section.scrollIntoView({
+                        // Setting to behavior to smooth.
+                        behavior: "smooth",
+                    })
+                })
+            }
+        })
+    }
 }
+
+
 //End Main Functions
 
 // build the nav
@@ -91,7 +119,7 @@ add_new_button()
 // Scroll to anchor ID using scrollTO event
 document.addEventListener('scroll',move_effect);
 
-
+scroller();
 
 
 /**
@@ -117,6 +145,5 @@ document.addEventListener('scroll',move_effect);
 
 
 // Build menu 
-
 
 

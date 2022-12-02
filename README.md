@@ -81,11 +81,9 @@ Ideally, you should keep the README simple. If you need to add more complex expl
     - ```nav-bar``` to hold the subelements inside the navigation menu.
 - The ```navMenuBuilder``` function, iterating over all the sections in the page to get every section id and section data we use to build our new created elements and link them to each others, and creating a new ```<li>``` elements to hold the anchor's ```<a>``` elements inside the navigation bar menu we will use later to navigate to the right section using the ```id``` attribute inside the ```li``` element using the ```#``` to refer the section we want to go to.
 - Adding the class to each ```anchor``` element, and then adding the title to this element to appear with the name according to the section using the ``` data``` attribute we get previously.
-- Adding ```eventListener``` to the ```anchor``` element to navigate smoothly. and pervent the default behavior which will jump instantly to the section.
+- To scroll smoothly i added an html class to the css file to change the scroll-behavior to smooth.
 - The final thing is to link all the element to each other, the ```anchor``` to the ```li``` in the the main ```navBar``` element.
-
-one more thing is to add ```eventListener``` to the ```window``` to tell the browser when loading he should run the main navMenuBuilder function instantly. instead of just write it down to run after some lines of codes. that's to always run the main navMenuBuilder funtion even if there were error in loading the page in previous lines.
-
+- To make the display responsive i changed some values of the navbar__menu class in the css file and it's related (inherited) class and elements.
 - For the section view state i use  ```getBoundingClientRect``` because i needed to get the dimensions of each block of the sections in the page.
 - Using the previous function, the backgound style (using ```your-active-class``` in the css file) and the ```eventListener``` to controll the appearence of each section when viewed in the page. 
 

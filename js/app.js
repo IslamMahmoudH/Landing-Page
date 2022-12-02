@@ -32,15 +32,20 @@ const main_sections=document.querySelectorAll('section');
 
 // Set sections as active to distinguish the part the user is reaing in the web page using the function move_effect
 function move_effect(){
+    // Here i created a new constat which Hold all the anchors element in the navigation menu bar.
     const anchors = document.querySelectorAll('a.menu__link');
     for(let section of main_sections){
         //here we used getBoundingClientRect() to get the dimension of each section as a block in the page
         if(section.getBoundingClientRect().top<200 && section.getBoundingClientRect().top>-200){
             section.classList.add('your-active-class')
+            // Looping over the anchors to find the anchor correspond to the section
             anchors.forEach(anchor => {
+                // settig my condition to be true and run if the anchor element textConten is equal to the section name.
                 if(anchor.textContent === section.dataset.nav){
+                    // Add my active class which i predefined in the CSS file under ".navbar__menu .menu__link.active"
                     anchor.classList.add('active');
                 }else{
+                    // Remove the active class if the condition is false.
                     anchor.classList.remove('active');
                 }
             })
